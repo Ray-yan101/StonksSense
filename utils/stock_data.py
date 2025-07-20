@@ -18,7 +18,11 @@ def get_stock_data(ticker_symbol: str):
         title_text=f"{stock.info.get('longName', ticker_symbol)} - Price Trend",
         xaxis_title="Date",
         yaxis_title="Stock Price (USD)",
-        template="plotly_white"
+        template="plotly_white",
+        height=420,       
+        width=650, margin=dict(l=50, r=50, t=60, b=60),  
+    xaxis=dict(tickangle=45)     
+        
     )
     chart_html = fig.to_html(full_html=False, include_plotlyjs='cdn')
     return stock.info, chart_html
