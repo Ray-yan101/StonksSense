@@ -1,0 +1,123 @@
+{% extends "layout.html" %}
+{% block content %}
+<section style="max-width:420px;margin:auto;">
+    <div class="box">
+        <h2>Analyze Stock & News Sentiment</h2>
+        <p class="subtitle">Enter a stock ticker to get the latest price trends and news-based sentiment.</p>
+        {% if error %}
+            <div class="msg-error">{{ error }}</div>
+        {% endif %}
+        <form method="POST" action="/analyze" autocomplete="off">
+            <label for="ticker">Stock Ticker <span style="color:#d32f2f">*</span></label>
+            <input
+                type="text"
+                id="ticker"
+                name="ticker"
+                class="input-field"
+                placeholder="E.g. AAPL, TSLA"
+                maxlength="6"
+                required
+                autofocus
+            >
+            <button type="submit" class="btn-main">Analyze</button>
+        </form>
+        <div class="tips">
+            Example tickers: <span>AAPL</span> &bull; <span>TSLA</span> &bull; <span>GOOG</span> &bull; <span>INFY</span>
+        </div>
+    </div>
+</section>
+<style>
+    .box {
+        background: #fff;
+        padding: 2.25em 2em 1.5em 2em;
+        border-radius: 14px;
+        margin-top: 40px;
+        box-shadow: 0 3px 18px rgba(38,43,73,0.09), 0 0.5px 2px #e1e5f1;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .box h2 {
+        font-size: 1.45em;
+        margin-bottom: 0.6em;
+        color: #26336e;
+        text-align: center;
+    }
+    .subtitle {
+        font-size: 1.04em;
+        color: #6a7480;
+        margin-bottom: 1.4em;
+        text-align: center;
+    }
+    label {
+        font-weight: 600;
+        display: block;
+        margin-bottom: 0.4em;
+        color: #374785;
+        letter-spacing: 1px;
+        font-size: 1.08em;
+    }
+    .input-field {
+        width: 100%;
+        padding: 11px 12px;
+        border-radius: 6px;
+        border: 1.5px solid #d9e1ef;
+        font-size: 1.08em;
+        margin-bottom: 1.1em;
+        outline: none;
+        background: #f9fafb;
+        transition: border 0.2s;
+    }
+    .input-field:focus {
+        border-color: #5a70e6;
+    }
+    .btn-main {
+        background-color: #374785;
+        color: #fff;
+        font-weight: 600;
+        font-size: 1.08em;
+        border: none;
+        border-radius: 8px;
+        padding: 10px 0;
+        width: 100%;
+        cursor: pointer;
+        letter-spacing: 0.6px;
+        margin-bottom: 0.5em;
+        transition: background 0.16s;
+    }
+    .btn-main:hover {
+        background-color: #28325b;
+    }
+    .msg-error {
+        background: #ffeaea;
+        color: #d32f2f;
+        padding: 0.7em 1em;
+        border-radius: 7px;
+        margin-bottom: 1.2em;
+        border: 1.5px solid #ffc9ca;
+        font-size: 0.98em;
+        text-align: center;
+    }
+    .tips {
+        font-size: 0.97em;
+        text-align: center;
+        color: #858db2;
+        margin-top: 1em;
+        letter-spacing: 1px;
+    }
+    .tips span {
+        background: #f1f3fc;
+        border-radius: 4px;
+        padding: 2px 7px;
+        margin: 0 2px;
+        display: inline-block;
+        font-weight: 500;
+        color: #374785;
+    }
+    @media (max-width: 520px) {
+        .box {
+            padding: 1.35em 0.5em 1em 0.5em;
+        }
+    }
+</style>
+{% endblock %}

@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stock Sentiment Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            background: #f5f8fa;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            background-color: #374785;
+            color: #fff;
+            padding: 24px 0 20px 0;
+            box-shadow: 0 2px 12px rgba(35, 39, 53, 0.05);
+        }
+        header .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1em;
+            display: flex;
+            align-items: center;
+        }
+        header h1 {
+            font-size: 2.1em;
+            letter-spacing: 1px;
+            margin: 0;
+            font-weight: 700;
+        }
+        main {
+            flex: 1 1 auto;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2em 1em 1em 1em;
+        }
+        footer {
+            background: #ecedf6;
+            color: #7e8593;
+            text-align: center;
+            padding: 14px 0 8px 0;
+            font-size: 1em;
+            border-top: 1px solid #d6d9e5;
+            letter-spacing: 1px;
+        }
+        @media (max-width: 600px) {
+            header .container, main {
+                max-width: 98vw;
+                padding: 0 0.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Stock Sentiment Dashboard</h1>
+        </div>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        &copy; {{ year }} Stock Sentiment App &middot; Made with Flask, yFinance, NewsAPI, VADER
+    </footer>
+</body>
+</html>

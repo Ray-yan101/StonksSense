@@ -1,0 +1,197 @@
+body {
+    background: #f5f8fa;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Styles */
+header {
+    background-color: #374785;
+    color: #fff;
+    padding: 24px 0 20px 0;
+    box-shadow: 0 2px 12px rgba(35, 39, 53, 0.05);
+}
+header .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1em;
+    display: flex;
+    align-items: center;
+}
+header h1 {
+    font-size: 2.1em;
+    letter-spacing: 1px;
+    margin: 0;
+    font-weight: 700;
+}
+
+/* Main Content Area */
+main {
+    flex: 1 1 auto;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2em 1em 1em 1em;
+}
+
+/* Footer Styles */
+footer {
+    background: #ecedf6;
+    color: #7e8593;
+    text-align: center;
+    padding: 14px 0 8px 0;
+    font-size: 1em;
+    border-top: 1px solid #d6d9e5;
+    letter-spacing: 1px;
+}
+
+/* Centered Form Section */
+.center-form {
+    max-width: 420px;
+    margin: auto;
+}
+
+/* Box/Card Container */
+.box {
+    background: #fff;
+    padding: 2.25em 2em 1.5em 2em;
+    border-radius: 14px;
+    margin-top: 40px;
+    box-shadow: 0 3px 18px rgba(38,43,73,0.09), 0 0.5px 2px #e1e5f1;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.box h2 {
+    font-size: 1.45em;
+    margin-bottom: 0.6em;
+    color: #26336e;
+    text-align: center;
+}
+.subtitle {
+    font-size: 1.04em;
+    color: #6a7480;
+    margin-bottom: 1.4em;
+    text-align: center;
+}
+
+/* Form Elements */
+label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.4em;
+    color: #374785;
+    letter-spacing: 1px;
+    font-size: 1.08em;
+}
+.input-field {
+    width: 100%;
+    padding: 11px 12px;
+    border-radius: 6px;
+    border: 1.5px solid #d9e1ef;
+    font-size: 1.08em;
+    margin-bottom: 1.1em;
+    outline: none;
+    background: #f9fafb;
+    transition: border 0.2s;
+}
+.input-field:focus {
+    border-color: #5a70e6;
+}
+.btn-main {
+    background-color: #374785;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.08em;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 0;
+    width: 100%;
+    cursor: pointer;
+    letter-spacing: 0.6px;
+    margin-bottom: 0.5em;
+    transition: background 0.16s;
+}
+.btn-main:hover {
+    background-color: #28325b;
+}
+
+/* Error Message */
+.msg-error {
+    background: #ffeaea;
+    color: #d32f2f;
+    padding: 0.7em 1em;
+    border-radius: 7px;
+    margin-bottom: 1.2em;
+    border: 1.5px solid #ffc9ca;
+    font-size: 0.98em;
+    text-align: center;
+}
+
+/* Tips / Examples */
+.tips {
+    font-size: 0.97em;
+    text-align: center;
+    color: #858db2;
+    margin-top: 1em;
+    letter-spacing: 1px;
+}
+.tips span {
+    background: #f1f3fc;
+    border-radius: 4px;
+    padding: 2px 7px;
+    margin: 0 2px;
+    display: inline-block;
+    font-weight: 500;
+    color: #374785;
+}
+
+/* Results and News Styling */
+.info-block {
+    margin-bottom: 1em;
+    color: #374785;
+    background: #f8f9ff;
+    border-radius: 7px;
+    padding: 12px 15px;
+    font-size: 1.08em;
+}
+.sentiment-block h3,
+.news-block h3 {
+    color: #26336e;
+    margin-top: 1.3em;
+    margin-bottom: .4em;
+    font-size: 1.14em;
+}
+.sentiment {
+    font-size: 1.35em;
+    display: block;
+    margin-bottom: 0.8em;
+    color: #26336e;
+    letter-spacing: 1px;
+}
+.news-block ul {
+    padding-left: 1em;
+    color: #555f7a;
+}
+.news-block li {
+    margin-bottom: 0.5em;
+}
+.date-label {
+    font-size: 0.93em;
+    color: #858db2;
+    margin-left: .75em;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 520px) {
+    .box {
+        padding: 1.35em 0.5em 1em 0.5em;
+    }
+    main,
+    header .container {
+        padding: 0 0.5em;
+        max-width: 98vw;
+    }
+}

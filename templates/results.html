@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block content %}
+<section class="center-form">
+    <div class="box">
+        <h2>Results for {{ stock_info.longName or stock_info.symbol }}</h2>
+
+        <div class="info-block">
+            <strong>Ticker:</strong> {{ stock_info.symbol }}<br>
+            <strong>Current Price:</strong> {{ stock_info.currentPrice }}
+        </div>
+
+        <div class="sentiment-block">
+            <h3>News Sentiment</h3>
+            <span class="sentiment">{{ sentiment }}</span>
+        </div>
+
+        <div class="chart-block" style="margin:1.5em 0">
+            {{ chart|safe }}
+        </div>
+
+        <div class="news-block">
+            <h3>Recent News</h3>
+            {% if articles %}
+                <ul>
+                    {% for article in articles %}
+                    <li>
+                        <a href="{{ article.url }}" target="_blank">{{ article.title }}</a>
+                        <span class="date-label">{{ article.publishedAt[:10] if article.publishedAt}}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No recent news found.</p>
+            {% endif %}
+        </div>
+        <div style="text-align: center; margin-top: 2em;">
+            <a href="/" class="btn-main" style="max-width:180px;margin:auto;">Analyze Another Stock</a>
+        </div>
+    </div>
+</section>
+{% endblock %}
