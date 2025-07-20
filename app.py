@@ -16,7 +16,8 @@ def analyze():
     if not ticker:
         return render_template("index.html", error="Please enter a stock ticker.")
 
-    stock_info, chart_html = get_stock_data(ticker)
+    stock_info, chart_html, predicted_prices = get_stock_data(ticker)
+
     
     if not stock_info:
         error_msg = f"Could not find data for '{ticker}'. Please try another symbol."
@@ -29,7 +30,8 @@ def analyze():
         stock_info=stock_info,
         chart=chart_html,
         sentiment=sentiment,
-        articles=articles
+        articles=articles,
+        predicted_prices=predicted_prices 
     )
 
 if __name__ == "__main__":

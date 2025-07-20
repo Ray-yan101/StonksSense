@@ -18,6 +18,26 @@
             {{ chart|safe }}
         </div>
 
+        {% if predicted_prices %}
+    <div class="prediction-block">
+        <h3>5-Day Linear Regression Price Forecast</h3>
+        <table>
+            <tr>
+                <th>Day</th>
+                <th>Predicted Price (USD)</th>
+            </tr>
+            {% for i in range(5) %}
+            <tr>
+                <td>Day {{ i+1 }}=</td>
+                <td>${{ '%.2f'|format(predicted_prices[i]) }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        
+    </div>
+{% endif %}
+
+
         <div class="news-block">
             <h3>Recent News</h3>
             {% if articles %}
